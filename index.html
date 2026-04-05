@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Truck Logistics</title>
+    <meta
+      name="description"
+      content="Truck Logistics logistics platform rebuilt with React and Vite."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Rajdhani:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Exo+2:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="/src/main.jsx"></script>
+  </head>
+  <body>
+    <div id="root">
+      <style>
+        .boot-screen {
+          min-height: 100vh;
+          display: grid;
+          place-items: center;
+          padding: 2rem;
+          font-family: "Poppins", "Exo 2", "Rajdhani", "Orbitron", sans-serif;
+          color: #edf4ff;
+          background:
+            radial-gradient(circle at top left, rgba(66, 144, 255, 0.22), transparent 34%),
+            radial-gradient(circle at top right, rgba(173, 135, 86, 0.16), transparent 30%),
+            radial-gradient(circle at bottom center, rgba(48, 235, 197, 0.09), transparent 30%),
+            #060914;
+          text-align: center;
+          overflow: hidden;
+        }
+        .boot-card {
+          position: relative;
+          width: min(620px, 100%);
+          padding: 2.4rem 2rem;
+          border-radius: 32px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: linear-gradient(180deg, rgba(14, 22, 38, 0.92), rgba(8, 14, 24, 0.86));
+          box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45);
+          backdrop-filter: blur(22px);
+        }
+        .boot-mark {
+          position: relative;
+          width: 148px;
+          height: 148px;
+          margin: 0 auto 1.25rem;
+          display: grid;
+          place-items: center;
+        }
+        .boot-ring,
+        .boot-pulse {
+          position: absolute;
+          inset: 50% auto auto 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 999px;
+        }
+        .boot-ring.one {
+          width: 120px;
+          height: 120px;
+          border: 1px solid rgba(90, 138, 255, 0.24);
+          animation: bootSpin 12s linear infinite;
+        }
+        .boot-ring.two {
+          width: 144px;
+          height: 144px;
+          border: 1px dashed rgba(188, 156, 108, 0.24);
+          animation: bootSpinReverse 14s linear infinite;
+        }
+        .boot-pulse {
+          width: 156px;
+          height: 156px;
+          background: radial-gradient(circle, rgba(67, 117, 238, 0.18), transparent 68%);
+          animation: bootPulse 2.4s ease-in-out infinite;
+        }
+        .boot-logo-shell {
+          position: relative;
+          z-index: 1;
+          width: 102px;
+          height: 102px;
+          padding: 8px;
+          border-radius: 28px;
+          background: linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(236, 242, 250, 0.9));
+          box-shadow: 0 18px 40px rgba(10, 16, 30, 0.28);
+          animation: bootFloat 3.4s ease-in-out infinite;
+        }
+        .boot-logo-shell img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          display: block;
+          border-radius: 20px;
+        }
+        .boot-kicker {
+          display: inline-block;
+          margin-bottom: 0.8rem;
+          color: #7db5ff;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          font-size: 0.75rem;
+        }
+        .boot-card h1 {
+          margin: 0 0 0.8rem;
+          font-size: clamp(1.8rem, 4vw, 2.7rem);
+          letter-spacing: -0.04em;
+        }
+        .boot-card p {
+          margin: 0.35rem 0;
+          color: #94a6c4;
+          line-height: 1.7;
+        }
+        .boot-meta {
+          margin-top: 1.25rem;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 0.75rem;
+        }
+        .boot-meta span {
+          padding: 0.65rem 0.95rem;
+          border-radius: 999px;
+          border: 1px solid rgba(110, 144, 255, 0.14);
+          background: rgba(255, 255, 255, 0.04);
+          color: #a5b6d3;
+          font-size: 0.84rem;
+        }
+        @keyframes bootSpin {
+          from { transform: translate(-50%, -50%) rotate(0deg); }
+          to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        @keyframes bootSpinReverse {
+          from { transform: translate(-50%, -50%) rotate(360deg); }
+          to { transform: translate(-50%, -50%) rotate(0deg); }
+        }
+        @keyframes bootPulse {
+          0%, 100% { opacity: 0.45; transform: translate(-50%, -50%) scale(0.92); }
+          50% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.04); }
+        }
+        @keyframes bootFloat {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-7px); }
+        }
+      </style>
+      <div class="boot-screen">
+        <div class="boot-card">
+          <div class="boot-mark">
+            <div class="boot-ring one"></div>
+            <div class="boot-ring two"></div>
+            <div class="boot-pulse"></div>
+            <div class="boot-logo-shell">
+              <img src="/truck-logistics-logo.png" alt="Truck Logistics" />
+            </div>
+          </div>
+          <span class="boot-kicker">Truck Logistics</span>
+          <h1>Opening logistics transaction layer</h1>
+          <p>Preparing the booking engine, logistics desk, simulator, and operations interface.</p>
+          <div class="boot-meta">
+            <span>Booking engine</span>
+            <span>Logistics desk</span>
+            <span>Simulator control</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
