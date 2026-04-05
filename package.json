@@ -1,7 +1,8 @@
 {
-  "name": "trucklogistic-neo",
+  "name": "srijan26_snapsyntax_aspdxcode",
   "private": true,
   "version": "1.0.0",
+  "description": "Truck Logistics platform with booking, tracking, operations, and simulation modules.",
   "type": "module",
   "scripts": {
     "dev": "vite",
